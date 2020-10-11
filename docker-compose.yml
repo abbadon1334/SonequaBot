@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+
+  sonequa-bot:
+    container_name: sonequa-bot
+    image: ${DOCKER_REGISTRY-}bot
+    build:
+      context: ./SonequaBot
+      dockerfile: Dockerfile
+      
+  sonequa-frontend:
+    container_name: sonequa-frontend
+    image: ${DOCKER_REGISTRY-}signalr
+    depends_on:
+      - sonequa-bot
+    build:
+      context: ./SonequaBot.Web
+      dockerfile: Dockerfile
