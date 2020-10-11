@@ -3,7 +3,7 @@ WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["SonequaBot/SonequaBot.csproj", "SonequaBot/"]
+COPY ["SonequaBot.csproj", "SonequaBot/"]
 RUN dotnet restore "SonequaBot/SonequaBot.csproj"
 COPY . .
 WORKDIR "/src/SonequaBot"

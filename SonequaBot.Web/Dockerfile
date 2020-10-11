@@ -5,7 +5,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["SonequaBot.Web/SonequaBot.Web.csproj", "SonequaBot.Web/"]
+COPY ["SonequaBot.Web.csproj", "SonequaBot.Web/"]
 RUN dotnet restore "SonequaBot.Web/SonequaBot.Web.csproj"
 COPY . .
 WORKDIR "/src/SonequaBot.Web"
