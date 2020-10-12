@@ -1,5 +1,8 @@
 version: '3.4'
 
+networks:
+  BOT:
+
 services:
 
   sonequa-bot:
@@ -8,6 +11,8 @@ services:
     build:
       context: ./SonequaBot
       dockerfile: Dockerfile
+    networks:
+      - BOT
       
   sonequa-frontend:
     container_name: sonequa-frontend
@@ -17,3 +22,5 @@ services:
     build:
       context: ./SonequaBot.Web
       dockerfile: Dockerfile
+    networks:
+      - BOT
